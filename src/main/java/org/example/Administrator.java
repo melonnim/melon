@@ -4,11 +4,12 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
+import static org.example.Constants.*;
+
 /**
  * Administrator user with higher access level to manage appointments.
  */
 public class Administrator extends User {
-
     /**
      * constructor for the administrator
      */
@@ -21,12 +22,12 @@ public class Administrator extends User {
      */
     @Override
     public void bookAppointment(String userUsername, LocalDate date, LocalTime startTime, int duration, AppointmentType type){
-        List<Appointment> appointments = JsonHandler.loadList("appointments.json", Appointment.class);
+        List<Appointment> appointments = JsonHandler.loadList(APPOINTMENTS_FILE, Appointment.class);
         User targetUser = User.getUserObject(userUsername);
 
         Appointment appt = new Appointment(targetUser, this, date, startTime, duration, type, AppointmentStatus.CONFIRMED);
         appointments.add(appt);
-        JsonHandler.saveList(appointments, "appointments.json");
+        JsonHandler.saveList(appointments, APPOINTMENTS_FILE);
 
         Notification.addNotification("Admin booked an appointment for you on " + date, targetUser, this, NotificationType.CONFIRMATION);
         Notification.addNotification("You booked an appointment for " + userUsername, this, this, NotificationType.CONFIRMATION);
@@ -36,7 +37,7 @@ public class Administrator extends User {
      * Edits an existing appointment, by updating its parameters based on input.
      */
     public void editAppointment(Appointment appt, LocalDate newDate, LocalTime newTime, int newDuration, AppointmentType newType) {
-        List<Appointment> allAppointments = JsonHandler.loadList("appointments.json", Appointment.class);
+        List<Appointment> allAppointments = JsonHandler.loadList(APPOINTMENTS_FILE, Appointment.class);
 
         for (Appointment obj : allAppointments) {
             if (obj.getAdmin().getUsername().equals(appt.getAdmin().getUsername())
@@ -51,7 +52,7 @@ public class Administrator extends User {
             }
         }
 
-        JsonHandler.saveList(allAppointments, "appointments.json");
+        JsonHandler.saveList(allAppointments, APPOINTMENTS_FILE);
 
         ObserverManager.notifyObservers("Appointment updated to " + newDate + " at " + newTime,
                 appt.getUser(), this, NotificationType.CONFIRMATION);
@@ -61,7 +62,7 @@ public class Administrator extends User {
      * Confirms an appointment, changing its status to CONFIRMED
      */
     public static void confirmAppointment(Appointment appt) {
-        List<Appointment> allAppointments = JsonHandler.loadList("appointments.json", Appointment.class);
+        List<Appointment> allAppointments = JsonHandler.loadList(APPOINTMENTS_FILE, Appointment.class);
 
         for (Appointment obj : allAppointments) {
             if (obj.getAdmin().getUsername().equals(appt.getAdmin().getUsername())
@@ -73,7 +74,7 @@ public class Administrator extends User {
             }
         }
 
-        JsonHandler.saveList(allAppointments, "appointments.json");
+        JsonHandler.saveList(allAppointments, APPOINTMENTS_FILE);
 
         ObserverManager.notifyObservers("Appointment confirmed on " + appt.getDate(),
                 appt.getUser(), appt.getAdmin(), NotificationType.CONFIRMATION);
@@ -84,7 +85,7 @@ public class Administrator extends User {
      * @return the administrator object if found
      */
     public static Administrator getAdministratorObject(String username) {
-        List<Administrator> admins = JsonHandler.loadList("admins.json", Administrator.class);
+        List<Administrator> admins = JsonHandler.loadList(ADMINS_FILE, Administrator.class);
 
         for (Administrator obj : admins) {
             if (obj.getUsername().equals(username)) return obj;

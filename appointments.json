@@ -124,5 +124,131 @@
     "type": "GROUP",
     "status": "CONFIRMED",
     "maxParticipants": 3
+  },
+  {
+    "user": {
+      "username": "qasim",
+      "email": "qasim@gmail.com",
+      "password": "222"
+    },
+    "admin": {
+      "username": "momens",
+      "email": "momenx32005@gmail.com",
+      "password": "766"
+    },
+    "date": "2026-04-21",
+    "startTime": "12:30:00",
+    "duration": 30,
+    "type": "IN_PERSON",
+    "status": "CANCELLED",
+    "maxParticipants": 3
+  },
+  {
+    "user": {
+      "username": "qasim",
+      "email": "qasim@gmail.com",
+      "password": "222"
+    },
+    "admin": {
+      "username": "mm",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "date": "2026-05-13",
+    "startTime": "13:00:00",
+    "duration": 30,
+    "type": "INDIVIDUAL",
+    "status": "CANCELLED",
+    "maxParticipants": 1
+  },
+  {
+    "user": {
+      "username": "qasim",
+      "email": "qasim@gmail.com",
+      "password": "222"
+    },
+    "admin": {
+      "username": "Momen Saleh",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "date": "2026-05-19",
+    "startTime": "12:00:00",
+    "duration": 60,
+    "type": "IN_PERSON",
+    "status": "CONFIRMED",
+    "maxParticipants": 3
+  },
+  {
+    "user": {
+      "username": "yazan",
+      "email": "yazan@gmail.com",
+      "password": "666"
+    },
+    "admin": {
+      "username": "Momen Saleh",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "date": "2026-05-21",
+    "startTime": "11:30:00",
+    "duration": 30,
+    "type": "INDIVIDUAL",
+    "status": "CANCELLED",
+    "maxParticipants": 1
+  },
+  {
+    "user": {
+      "username": "ahmad",
+      "email": "ahmad@gmail.com",
+      "password": "555"
+    },
+    "admin": {
+      "username": "Momen Saleh",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "date": "2026-05-17",
+    "startTime": "13:30:00",
+    "duration": 60,
+    "type": "URGENT",
+    "status": "CONFIRMED",
+    "maxParticipants": 1
+  },
+  {
+    "user": {
+      "username": "abdallah",
+      "email": "abdallah@gmail.com",
+      "password": "444"
+    },
+    "admin": {
+      "username": "Momen Saleh",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "date": "2026-05-19",
+    "startTime": "10:00:00",
+    "duration": 60,
+    "type": "IN_PERSON",
+    "status": "PENDING",
+    "maxParticipants": 3
+  },
+  {
+    "user": {
+      "username": "ali",
+      "email": "ali@gmail.com",
+      "password": "333"
+    },
+    "admin": {
+      "username": "Momen Saleh",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "date": "2026-05-18",
+    "startTime": "14:00:00",
+    "duration": 60,
+    "type": "ASSESSMENT",
+    "status": "PENDING",
+    "maxParticipants": 3
   }
 ]

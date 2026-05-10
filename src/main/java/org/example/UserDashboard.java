@@ -567,7 +567,7 @@ public class UserDashboard extends JPanel {
         String[] adminNames = new String[admins.size() + 1];
         adminNames[0] = "— Select Administrator —";
         for (int i = 0; i < admins.size(); i++)
-            adminNames[i + 1] = admins.get(i).username;
+            adminNames[i + 1] = admins.get(i).getUsername();
         JComboBox<String> adminBox = Components.comboBox(adminNames);
         adminBox.setAlignmentX(LEFT_ALIGNMENT);
         adminBox.setMaximumSize(new Dimension(Integer.MAX_VALUE, 38));

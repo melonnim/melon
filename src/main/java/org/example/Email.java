@@ -4,12 +4,24 @@ import jakarta.mail.*;
 import jakarta.mail.internet.*;
 import java.util.Properties;
 
+/**
+ * Handles sending email notifications to users.
+ */
 public class Email implements NotificationObserver {
 
+    /**
+     * Empty constructor.
+     */
     public Email() {
 
     }
 
+    /**
+     * Sends an email message to a user.
+     *
+     * @param email target email address
+     * @param messageText email message content
+     */
     public void sendEmail(String email, String messageText) {
 
         if (email == null) {
@@ -52,6 +64,14 @@ public class Email implements NotificationObserver {
         }
     }
 
+    /**
+     * Sends an email notification when updated.
+     *
+     * @param message notification message
+     * @param user target user
+     * @param admin related administrator
+     * @param type notification type
+     */
     @Override
     public void update(String message, User user, Administrator admin, NotificationType type) {
         sendEmail(user.getEmail(), message);

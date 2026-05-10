@@ -53,5 +53,25 @@
     "username": "Ali",
     "email": "s12340285@stu.najah.edu",
     "password": "123456789"
+  },
+  {
+    "username": "kk",
+    "email": "kk@gmail.com",
+    "password": ""
+  },
+  {
+    "username": "mm",
+    "email": "momenx22005@gmail.com",
+    "password": "ff"
+  },
+  {
+    "username": "obada",
+    "email": "obada@example.com",
+    "password": "4ff4e8523adf2856522f917c0ed73ce98eadebb63d685a5879c1e1c81622eed2"
+  },
+  {
+    "username": "lana",
+    "email": "lana@example.com",
+    "password": "0562b166a76cfecfaf8f942fe229c9f71b711735fb0733cd58504ae058335567"
   }
 ]

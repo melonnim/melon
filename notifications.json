@@ -254,5 +254,341 @@
       "password": "888"
     },
     "type": "CONFIRMATION"
+  },
+  {
+    "dateSent": "2026-04-16 10:06:47",
+    "message": "Admin booked an appointment for you on 2026-04-21",
+    "active": true,
+    "user": {
+      "username": "qasim",
+      "email": "qasim@gmail.com",
+      "password": "222"
+    },
+    "admin": {
+      "username": "momens",
+      "email": "momenx32005@gmail.com",
+      "password": "766"
+    },
+    "type": "CONFIRMATION"
+  },
+  {
+    "dateSent": "2026-04-16 10:06:47",
+    "message": "You booked an appointment for qasim",
+    "active": true,
+    "user": {
+      "username": "momens",
+      "email": "momenx32005@gmail.com",
+      "password": "766"
+    },
+    "admin": {
+      "username": "momens",
+      "email": "momenx32005@gmail.com",
+      "password": "766"
+    },
+    "type": "CONFIRMATION"
+  },
+  {
+    "dateSent": "2026-04-16 10:07:53",
+    "message": "Admin cancelled your appointment on 2026-04-21",
+    "active": true,
+    "user": {
+      "username": "qasim",
+      "email": "qasim@gmail.com",
+      "password": "222"
+    },
+    "admin": {
+      "username": "momens",
+      "email": "momenx32005@gmail.com",
+      "password": "766"
+    },
+    "type": "CANCELLATION"
+  },
+  {
+    "dateSent": "2026-04-16 10:07:57",
+    "message": "You cancelled appointment for qasim",
+    "active": true,
+    "user": {
+      "username": "momens",
+      "email": "momenx32005@gmail.com",
+      "password": "766"
+    },
+    "admin": {
+      "username": "momens",
+      "email": "momenx32005@gmail.com",
+      "password": "766"
+    },
+    "type": "CANCELLATION"
+  },
+  {
+    "dateSent": "2026-04-16 13:22:29",
+    "message": "Admin booked an appointment for you on 2026-05-06",
+    "active": true,
+    "user": {
+      "username": "qasim",
+      "email": "qasim@gmail.com",
+      "password": "222"
+    },
+    "admin": {
+      "username": "mm",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "type": "CONFIRMATION"
+  },
+  {
+    "dateSent": "2026-04-16 13:22:29",
+    "message": "You booked an appointment for qasim",
+    "active": true,
+    "user": {
+      "username": "mm",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "admin": {
+      "username": "mm",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "type": "CONFIRMATION"
+  },
+  {
+    "dateSent": "2026-04-16 13:23:12",
+    "message": "Appointment updated to 2026-05-13 at 13:00",
+    "active": true,
+    "user": {
+      "username": "qasim",
+      "email": "qasim@gmail.com",
+      "password": "222"
+    },
+    "admin": {
+      "username": "mm",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "type": "CONFIRMATION"
+  },
+  {
+    "dateSent": "2026-04-16 13:23:42",
+    "message": "Admin cancelled your appointment on 2026-05-13",
+    "active": true,
+    "user": {
+      "username": "qasim",
+      "email": "qasim@gmail.com",
+      "password": "222"
+    },
+    "admin": {
+      "username": "mm",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "type": "CANCELLATION"
+  },
+  {
+    "dateSent": "2026-04-16 13:23:45",
+    "message": "You cancelled appointment for qasim",
+    "active": true,
+    "user": {
+      "username": "mm",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "admin": {
+      "username": "mm",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "type": "CANCELLATION"
+  },
+  {
+    "dateSent": "2026-05-09 23:46:10",
+    "message": "Admin booked an appointment for you on 2026-05-19",
+    "active": true,
+    "user": {
+      "username": "qasim",
+      "email": "qasim@gmail.com",
+      "password": "222"
+    },
+    "admin": {
+      "username": "Momen Saleh",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "type": "CONFIRMATION"
+  },
+  {
+    "dateSent": "2026-05-09 23:46:10",
+    "message": "You booked an appointment for qasim",
+    "active": true,
+    "user": {
+      "username": "Momen Saleh",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "admin": {
+      "username": "Momen Saleh",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "type": "CONFIRMATION"
+  },
+  {
+    "dateSent": "2026-05-09 23:46:45",
+    "message": "Admin booked an appointment for you on 2026-05-21",
+    "active": true,
+    "user": {
+      "username": "yazan",
+      "email": "yazan@gmail.com",
+      "password": "666"
+    },
+    "admin": {
+      "username": "Momen Saleh",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "type": "CONFIRMATION"
+  },
+  {
+    "dateSent": "2026-05-09 23:46:45",
+    "message": "You booked an appointment for yazan",
+    "active": true,
+    "user": {
+      "username": "Momen Saleh",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "admin": {
+      "username": "Momen Saleh",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "type": "CONFIRMATION"
+  },
+  {
+    "dateSent": "2026-05-09 23:47:25",
+    "message": "Admin booked an appointment for you on 2026-05-17",
+    "active": true,
+    "user": {
+      "username": "ahmad",
+      "email": "ahmad@gmail.com",
+      "password": "555"
+    },
+    "admin": {
+      "username": "Momen Saleh",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "type": "CONFIRMATION"
+  },
+  {
+    "dateSent": "2026-05-09 23:47:25",
+    "message": "You booked an appointment for ahmad",
+    "active": true,
+    "user": {
+      "username": "Momen Saleh",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "admin": {
+      "username": "Momen Saleh",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "type": "CONFIRMATION"
+  },
+  {
+    "dateSent": "2026-05-09 23:47:38",
+    "message": "Admin cancelled your appointment on 2026-05-21",
+    "active": true,
+    "user": {
+      "username": "yazan",
+      "email": "yazan@gmail.com",
+      "password": "666"
+    },
+    "admin": {
+      "username": "Momen Saleh",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "type": "CANCELLATION"
+  },
+  {
+    "dateSent": "2026-05-09 23:47:40",
+    "message": "You cancelled appointment for yazan",
+    "active": true,
+    "user": {
+      "username": "Momen Saleh",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "admin": {
+      "username": "Momen Saleh",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "type": "CANCELLATION"
+  },
+  {
+    "dateSent": "2026-05-09 23:49:10",
+    "message": "Request sent to Admin: Momen Saleh. Status: Pending.",
+    "active": true,
+    "user": {
+      "username": "abdallah",
+      "email": "abdallah@gmail.com",
+      "password": "444"
+    },
+    "admin": {
+      "username": "Momen Saleh",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "type": "CONFIRMATION"
+  },
+  {
+    "dateSent": "2026-05-09 23:49:12",
+    "message": "New booking request from abdallah on 2026-05-19",
+    "active": true,
+    "user": {
+      "username": "Momen Saleh",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "admin": {
+      "username": "Momen Saleh",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "type": "REMINDER"
+  },
+  {
+    "dateSent": "2026-05-09 23:50:01",
+    "message": "Request sent to Admin: Momen Saleh. Status: Pending.",
+    "active": true,
+    "user": {
+      "username": "ali",
+      "email": "ali@gmail.com",
+      "password": "333"
+    },
+    "admin": {
+      "username": "Momen Saleh",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "type": "CONFIRMATION"
+  },
+  {
+    "dateSent": "2026-05-09 23:50:03",
+    "message": "New booking request from ali on 2026-05-18",
+    "active": true,
+    "user": {
+      "username": "Momen Saleh",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "admin": {
+      "username": "Momen Saleh",
+      "email": "momenx22005@gmail.com",
+      "password": "dd"
+    },
+    "type": "REMINDER"
   }
 ]

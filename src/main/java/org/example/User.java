@@ -3,15 +3,17 @@ package org.example;
 import java.time.*;
 import java.util.*;
 
+import static org.example.Constants.*;
+
 /**
  * This class represents a user in the system.
  * A user can book and cancel appointments, view their appointments,
  * and sign in or sign up.
  */
 public class User {
-    public String username;
-    public String email;
-    public String password;
+    private String username;
+    private String email;
+    private String password;
 
     /**
      * Creates a new user with basic info.
@@ -50,12 +52,12 @@ public class User {
      * Saves it as PENDING and sends notifications.
      */
     public void bookAppointment(String adminUsername, LocalDate date, LocalTime startTime, int duration, AppointmentType type){
-        List<Appointment> appointments = JsonHandler.loadList("appointments.json", Appointment.class);
+        List<Appointment> appointments = JsonHandler.loadList(APPOINTMENTS_FILE, Appointment.class);
         Administrator admin = Administrator.getAdministratorObject(adminUsername);
 
         Appointment appt = new Appointment(this, admin, date, startTime, duration, type, AppointmentStatus.PENDING);
         appointments.add(appt);
-        JsonHandler.saveList(appointments, "appointments.json");
+        JsonHandler.saveList(appointments, APPOINTMENTS_FILE);
 
         ObserverManager.notifyObservers("Request sent to Admin: " + adminUsername + ". Status: Pending.", this, admin, NotificationType.CONFIRMATION);
         ObserverManager.notifyObservers("New booking request from " + this.username + " on " + date, admin, admin, NotificationType.REMINDER);
@@ -66,11 +68,11 @@ public class User {
      * Sends notifications to both user and admin.
      */
     public void cancelAppointment(Appointment appt){
-        List <Appointment> appts = JsonHandler.loadList("appointments.json", Appointment.class);
+        List <Appointment> appts = JsonHandler.loadList(APPOINTMENTS_FILE, Appointment.class);
         for(Appointment obj : appts){
             if (obj.getAdmin().getUsername().equals(appt.getAdmin().getUsername()) && obj.getDate().equals(appt.getDate()) && obj.getStartTime().equals( appt.getStartTime())) {
                 obj.setStatus(AppointmentStatus.CANCELLED);
-                JsonHandler.saveList(appts, "appointments.json");
+                JsonHandler.saveList(appts, APPOINTMENTS_FILE);
 
                 String msgForUser = (this instanceof Administrator) ? "Admin cancelled your appointment on " + appt.getDate() : "You cancelled your appointment on " + appt.getDate();
                 String msgForAdmin = (this instanceof Administrator) ? "You cancelled appointment for " + appt.getUser().getUsername() : "User " + this.username + " cancelled their appointment on " + appt.getDate();
@@ -87,7 +89,7 @@ public class User {
      * Finds and returns a user by username.
      */
     public static User getUserObject(String username){
-        List <User> users = JsonHandler.loadList("users.json", User.class);
+        List <User> users = JsonHandler.loadList(USERS_FILE, User.class);
         for (User obj: users){ if (obj.getUsername().equals(username)) return obj; }
         return null;
     }
@@ -96,13 +98,24 @@ public class User {
      * Returns all appointments related to this user.
      */
     public ArrayList <Appointment> getUserAppointments(){
-        List <Appointment> allAppts = JsonHandler.loadList("appointments.json", Appointment.class);
+        List <Appointment> allAppts = JsonHandler.loadList(APPOINTMENTS_FILE, Appointment.class);
+        ArrayList <Appointment> adminAppts = new ArrayList <Appointment> ();
         ArrayList <Appointment> userAppts = new ArrayList <Appointment> ();
         for (Appointment obj : allAppts) {
-            if (this instanceof Administrator && obj.getAdmin().getUsername().equals(this.getUsername())) userAppts.add(obj);
-            else if (obj.getUser().getUsername().equals(this.getUsername())) userAppts.add(obj);
+            if (this instanceof Administrator && obj.getAdmin().getUsername().equals(this.getUsername())) adminAppts.add(obj);
+            else if (!(this instanceof Administrator) && obj.getUser().getUsername().equals(this.getUsername())) userAppts.add(obj);
         }
-        return userAppts;
+        return  this instanceof Administrator? adminAppts : userAppts;
+    }
+
+    private static String hashPassword(String password) {
+        try {
+            java.security.MessageDigest md = java.security.MessageDigest.getInstance("SHA-256");
+            byte[] hash = md.digest(password.getBytes());
+            StringBuilder sb = new StringBuilder();
+            for (byte b : hash) sb.append(String.format("%02x", b));
+            return sb.toString();
+        } catch (Exception e) { return password; }
     }
 
     /**
@@ -110,7 +123,7 @@ public class User {
      */
     public static Boolean signIn(String username, String password, String fileName ){
         List<User> Users = JsonHandler.loadList(fileName, User.class);
-        for (User u : Users) { if (u.username.equals(username) && u.password.equals(password)) return true; }
+        for (User u : Users) { if (u.username.equals(username) && u.password.equals(hashPassword(password))) {return true;}}
         return false;
     }
 
@@ -119,9 +132,9 @@ public class User {
      */
     public static int signUp(String username, String email, String password, String fileName){
         List<User> Users = JsonHandler.loadList(fileName, User.class);
-        if (!(email.contains("@") && email.contains("."))) return 2;
-        for (User u : Users) { if (u.username.equals(username)) return 1; if (u.email.equals(email)) return 2; }
-        Users.add(new User(username, email, password));
+        if (!(email.contains("@") && email.contains("."))) {return 2;}
+        for (User u : Users) { if (u.username.equals(username)) {return 1;} if (u.email.equals(email)) {return 2;} }
+        Users.add(new User(username, email, hashPassword(password)));
         JsonHandler.saveList(Users, fileName);
         return 0;
     }
